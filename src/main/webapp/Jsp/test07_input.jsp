@@ -16,7 +16,7 @@
 		<h2>메뉴 검색</h2>
 		<div class="d-flex">
 			<input type="text" class="form-control col-3" name="menu">
-			<input type="checkbox">4점 이하 제외
+			<input type="checkbox" name = "point">4점 이하 제외
 		</div>
 		<button type="submit" class="btn btn-success">검색</button>
 	</form>

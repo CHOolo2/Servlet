@@ -45,7 +45,9 @@ list.add(map);
 			<% for(Map<String, Object> store:list){ 
 				//serchMenu 와 store menu가 일치하는 경우
 				if(searchMenu.equals(store.get("menu"))){
-					double poinnt = (double) store.get("point");
+					double point = (double) store.get("point");
+					
+					point >= 4; 
 			%>
 				<tr>
 					<td><%=store.get("menu") %></td>
