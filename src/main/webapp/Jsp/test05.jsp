@@ -15,19 +15,28 @@
 	<%
 		int number = Integer.parseInt(request.getParameter("number"));
 		//인치*39.3701, 야드*1.094 , 피트*3.281 미터/ 3.281 
-		String operator = request.getParameter("operator");
-		double result = 0;
-		if(operator.equals("인치")){
-			result = number * 39.3701;
-		}else if(operator.equals("야드")){
-			result = number * 1.094;
-		}else if(operator.equals("피트")){
-			result = number * 3.281;
-		}else if(operator.equals("미터")){
-			result = number / 3.281;
+		
+		String[] operator = request.getParameterValues("operator");
+		String result = " ";
+		for(int i = 0; i <operator.length; i++){
+			if(operator[i].equals("inch")){
+				double inch = number * 0.39;
+				result += inch + "in<br>";
+			}else if(operator[i].equals("yard")){
+				double yard = number * 0.010936133;
+				result += yard + "yd<br>";
+			}else if(operator[i].equals("feet")){
+				double feet = number * 0.032808399;
+				result += feet + "ft<br>";
+			}else if(operator[i].equals("meter")){
+				double meter = number / 100.0;
+				result += meter + "m<br>";
+			}
 		}
 	%>
-	<div></div>
-	<div><% %></div>
+	<h2>변환결과</h2>
+	<h3><%= number%> cm</h3>
+	<hr>
+	<h3><%= result %></h3>
 </body>
 </html>
