@@ -56,6 +56,8 @@
     list.add(map);
     map = new HashMap<String, String>() {{ put("ch", "121"); put("name", "KBSN 스포츠"); put("category", "스포츠"); } };
     list.add(map);
+    
+    String category = request.getParameter("category");
 %>
 	<table class="table text-center">
 	
@@ -67,17 +69,19 @@
 			</tr>
 		</thead>
 		<tbody>
-		<% for(Map<String, String> chner:list){ 
-				String category = chner.get("category"); 
-				if(category.equals("지상파")){
-					
+		<% for(Map<String, String> channel:list){ 
+				String target = channel.get("category"); 
+				//카테고리가 일치하면 테이블에 tr추가
+				//카테고리가 없으면 테이플에 tr추가
+				if(category == null ||target.equals(category)){			
 		%>
 			<tr>
-				<th><%= chner.get("ch")%></th>
-				<th><%= chner.get("name")%></th>
-				<th><%= chner.get("category")%></th>
+				<th><%= channel.get("ch")%></th>
+				<th><%= channel.get("name")%></th>
+				<th><%= channel.get("category")%></th>
 			</tr>
-		<% }} %>
+		<% }
+		} %>
 		</tbody>
 	</table>
 		</section>
