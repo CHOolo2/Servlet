@@ -99,12 +99,12 @@
 %>
 			<article class="main d-flex border border-success p-3 mt-3">
 				<div class="photo col-2">
-					<img width="150" src="http://image.genie.co.kr/Y/IMAGE/IMG_ALBUM/081/867/444/81867444_1616662460652_1_600x600.JPG">
+					<img width="150" src="<%= artistInfo.get("photo") %>">
 				</div>
 				<div class="info col-10 ml-3">
-					<h3>아이유</h3>
-					<div>EDAM 엔터테이먼트</div>
-					<div>2008 데뷔</div>
+					<h3><%= artistInfo.get("name") %></h3>
+					<div><%= artistInfo.get("agency") %></div>
+					<div><%= artistInfo.get("debute") %> 데뷔</div>
 				</div>
 			</article>
 			<aside class="list mt-3">
